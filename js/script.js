@@ -1,16 +1,19 @@
 {
+    const stone ='kamień',
+          scissors = 'nożyce',
+          paper = 'papier';
     const playGame = function(playerInput) {
     clearMessages()
 
     const getMoveName = function (argMoveId) {
         if (argMoveId == 1) {
-            return 'kamień';
+            return stone;
         }
         else if (argMoveId == 2) {
-            return 'papier';
+            return paper;
         }
         else if (argMoveId == 3) {
-            return 'nożyce';
+            return scissors;
         }
         else {
             printMessage('Nie znam ruchu o id ' + argMoveId + '.');
@@ -27,22 +30,22 @@
 
     const displayResult = function(argComputerMove, argPlayerMove) {
         printMessage('Komputer zagrał: ' + argComputerMove + ', gracz zagrał ' + argPlayerMove);
-        if (argComputerMove == 'kamień' && argPlayerMove == 'papier') {
+        if (argComputerMove == stone && argPlayerMove == paper) {
             printMessage('Gracz wygrywa!');
         }
-        else if (argComputerMove == 'kamień' && argPlayerMove == 'nożyce') {
+        else if (argComputerMove == stone && argPlayerMove == scissors) {
             printMessage('Komputer wygrywa!');
         }
-        else if (argComputerMove == 'papier' && argPlayerMove == 'nożyce') {
+        else if (argComputerMove == paper && argPlayerMove == scissors) {
             printMessage('Gracz wygrywa!');
         }
-        else if (argComputerMove == 'papier' && argPlayerMove == 'kamień') {
+        else if (argComputerMove == paper && argPlayerMove == stone) {
             printMessage('Komputer wygrywa!');
         }
-        else if (argComputerMove == 'nożyce' && argPlayerMove == 'kamień') {
+        else if (argComputerMove == scissors && argPlayerMove == stone) {
             printMessage('Gracz wygrywa!');
         }
-        else if (argComputerMove == 'nożyce' && argPlayerMove == 'papier') {
+        else if (argComputerMove == scissors && argPlayerMove == paper) {
             printMessage('Komputer wygrywa!');
         }
         else if (argComputerMove == argPlayerMove) {
